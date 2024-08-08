@@ -153,13 +153,23 @@ outline: #4B9BCC;
 .button{
     border-radius: 5px;
     padding: 10px;
-    border:solid 1px #4B9BCC;
-    background-color: #f4f4f1bd;
-    color: rgba(86, 86, 86, 0.938);
+    background-color: #1d85c6; 
+    border:solid 1px #e8e9ea;
+    color: rgba(245, 244, 244, 0.815);
     font-size: 14px;
     font-weight: 100;
     width: 120px;
+    cursor: pointer;
     
+}
+hr{
+    color: #1d85c6;
+}
+
+.button:hover{
+  border:solid 1px #02111a;
+  background-color: #f4f4f1bd;
+  color: #040404;
 }
 .weather-forecast{
 display: flex;

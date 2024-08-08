@@ -44,8 +44,6 @@ axios.get(apiUrl).then(refreshWeather)
 function handleSearch(event){
     event.preventDefault();
     let searchInputElement = document.querySelector("#searchInput")
-    
-
     searchCity(searchInputElement.value)
 
 
