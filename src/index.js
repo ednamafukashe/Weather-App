@@ -8,7 +8,7 @@ function refreshWeather(response){
     let timeElement=document.querySelector("#time")
     let date= new Date(response.data.time*1000)
     let iconImage=document.querySelector("#icon")
-    iconImage.innerHTML = `<img src="${response.data.condition.icon_url}" alt="Weather icon" class="weather-icon"/>`;
+    iconImage.innerHTML = `<img class="icon-1" src="${response.data.condition.icon_url}" alt="Weather icon" class="weather-icon"/>`;
     cityElement.innerHTML = response.data.city
     windElement.innerHTML = `${response.data.wind.speed}km/h`
     descriptionElement.innerHTML = `, ${response.data.condition.description}`
@@ -64,24 +64,36 @@ function getForecast(city){
 function displayForecast(response){
 console.log(response.data)
 let forecastElement =document.querySelector("#forecast")
-let days = ['Tue', 'Wed' ,'Thu','Fri','Sat']
 let forecastHtml=""
- 
-days.forEach(function(day){
+
+response.data.daily.forEach(function(day,index){
+    if (index<5){
 forecastHtml =forecastHtml +
 `<div class="weather-forecast-day">
-    <div class="weather-forecast-date">${day}</div>
-        <div class="weather-forecast-icon">🌤️</div>
+    <div class="weather-forecast-date">${formatDay(day.time)}</div>
+        <div class="">
+        <img class="weather-forecast-icon" id="weather-forecast-icon "src="${day.condition.icon_url}"/>
+        </div>
             <div class="weather-forecast-temp">
                 <div class="temp-1">
-                    <strong>15&deg</strong>
+                    <strong>${Math.round(day.temperature.maximum)}</strong>
                 </div> 
-                <div class="temp-1"> 12&deg</div>
+                <div class="temp-1"> ${Math.round(day.temperature.minimum)}</div>
             </div>
 </div>
-`;})
+`;}
+})
+
 forecastElement.innerHTML =forecastHtml
 }
 
+function formatDay(timestamp){
+    
+    let date= new Date(timestamp*1000)
+    let days=['Sun', 'Mon' ,'Tue','Wed','Thu' ,'Fri', 'Sat']
+
+    return days[date.getDay()]
+
+}
 displayForecast()
 

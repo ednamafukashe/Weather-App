@@ -112,12 +112,12 @@ h3{
     color: rgb(118, 118, 118);
     
 }
-img{
+.icon-1 {
     background-color: #4B9BCC;
     border-radius: 300px;
     width: 150px;
     padding: none;
-    margin-right: 15px;
+    margin-right: 1px;
 
 }
 p{
@@ -177,7 +177,6 @@ justify-content:space-around ;
     font-weight: 300;
     font-size: 17px;
     line-height:20px ;
-    margin-bottom: 20px;
 }
 
 .weather-forecast-temp{
@@ -186,15 +185,12 @@ justify-content:space-around ;
     font-weight: 300;
     font-size: 17px;
     line-height:30px ;
-    margin-top: 10px;
     display: flex;
     justify-content: center;
 }
 .weather-forecast-icon{
     text-align: center;
-    line-height:20px ;
-    font-size: 60px;
-    margin-bottom:20px;
+    width: 80px;
 
 }
 .temp-1{
