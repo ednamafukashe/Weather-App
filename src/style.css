@@ -34,7 +34,7 @@ h1{
 }
 .percentage{
     font-weight: 600;
-    color: #f5de2d;
+    color: #F9C23C;
 }
 .overlay {
     border-radius: 10px;
@@ -102,7 +102,7 @@ h1{
 h3{
     font-size: 60px;
     margin: 0;
-    color: #f5de2d;
+    color: #F9C23C;
     padding: 0;
 }
 
@@ -115,8 +115,9 @@ h3{
 img{
     background-color: #4B9BCC;
     border-radius: 300px;
-    width: 200px;
+    width: 150px;
     padding: none;
+    margin-right: 15px;
 
 }
 p{
@@ -181,7 +182,7 @@ justify-content:space-around ;
 
 .weather-forecast-temp{
     text-align: center;
-    color:#F5DE2D;
+    color:#F9C23C;
     font-weight: 300;
     font-size: 17px;
     line-height:30px ;

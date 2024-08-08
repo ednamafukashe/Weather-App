@@ -15,6 +15,7 @@ function refreshWeather(response){
     humidityElement.innerHTML = `${response.data.temperature.humidity}%`
     temperatureElement.innerHTML= Math.round(temperature)
     timeElement.innerHTML = formatDate(date)
+    getForecast(response.data.city)
 }
 
 function formatDate(date){
@@ -25,8 +26,8 @@ function formatDate(date){
     let days=['Sunday', 'Monday' ,'Tuesday','Wednesday','Thursday' ,'Friday', 'Saturday']
     let day= days[date.getDay()]
 
-    if (minutes<10){
-        `0${minutes}`
+ if (minutes < 10) {
+        minutes = `0${minutes}`;  
     }
 
     return`${day} ${hours}:${minutes}`
@@ -35,7 +36,7 @@ function formatDate(date){
 
 function searchCity(city){
     let apiKey="982o4f7ffabt7303d3885b043bf71d70"
-    apiUrl=`https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`
+    apiUrl=`https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`
     console.log(apiUrl)
 
 axios.get(apiUrl).then(refreshWeather)
@@ -54,7 +55,14 @@ let searchForm = document.querySelector("#search")
 searchForm.addEventListener("submit",handleSearch)
 searchCity("Harare");
 
-function displayForecast(){
+function getForecast(city){
+   let apiKey="982o4f7ffabt7303d3885b043bf71d70"
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response){
+console.log(response.data)
 let forecastElement =document.querySelector("#forecast")
 let days = ['Tue', 'Wed' ,'Thu','Fri','Sat']
 let forecastHtml=""
