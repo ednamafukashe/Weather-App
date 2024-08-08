@@ -52,4 +52,28 @@ function handleSearch(event){
 
 let searchForm = document.querySelector("#search") 
 searchForm.addEventListener("submit",handleSearch)
-searchCity("Harare")
+searchCity("Harare");
+
+function displayForecast(){
+let forecastElement =document.querySelector("#forecast")
+let days = ['Tue', 'Wed' ,'Thu','Fri','Sat']
+let forecastHtml=""
+ 
+days.forEach(function(day){
+forecastHtml =forecastHtml +
+`<div class="weather-forecast-day">
+    <div class="weather-forecast-date">${day}</div>
+        <div class="weather-forecast-icon">🌤️</div>
+            <div class="weather-forecast-temp">
+                <div class="temp-1">
+                    <strong>15&deg</strong>
+                </div> 
+                <div class="temp-1"> 12&deg</div>
+            </div>
+</div>
+`;})
+forecastElement.innerHTML =forecastHtml
+}
+
+displayForecast()
+

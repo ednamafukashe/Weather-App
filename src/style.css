@@ -2,8 +2,7 @@ body {
     margin: 60px;
     padding: 0;
     font-family: "Montserrat", sans-serif;
-    background: radial-gradient(328px at 2.9% 15%, rgb(191, 224, 251) 0%, rgb(232, 233, 251) 25.8%, rgb(252, 239, 250) 50.8%, rgb(234, 251, 251) 77.6%, rgb(240, 251, 244) 100.7%);
-
+  background: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
 }
 
 .image-container {
@@ -30,7 +29,7 @@ h1{
     padding: 0;
     font-size: 16px; 
     color: white;
-    font-weight: 600;  
+    font-weight: 300;  
     padding-left: 1px;
 }
 .percentage{
@@ -39,7 +38,7 @@ h1{
 }
 .overlay {
     border-radius: 10px;
-    background-color: rgba(25, 132, 193, 0.744); 
+    background-color: rgba(14, 136, 206, 0.744); 
     position: absolute;
     top: 0;
     left: 0;
@@ -74,7 +73,7 @@ h1{
     margin-top: -15px;
     padding: 0;
  }
-.temp{
+.weather-forecast{
     margin-top: 20px;
     width: 700px;
     height: 150px;
@@ -91,6 +90,7 @@ h1{
     top:0;
     right:70px;
     font-size: 15px;
+    font-weight: 300;
 }
 .text {
     
@@ -125,10 +125,10 @@ p{
 }
 .humidity{
     margin: 0;
-display: flex;
+    display: flex;
     justify-items:flex-start;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 500;
 }
 
 .humid{
@@ -137,26 +137,65 @@ display: flex;
 
 .city{
 margin-top: 15px;
-border: 1px solid #007CB8 ;
+border: 1px solid #4B9BCC ;
 padding: 10px;
 width: 250px;
 border-radius: 5px;
 background-color: #d4e8f2;
 margin-right: 5px;
-outline: none;
+outline: #4B9BCC;
 }
 .city:focus {
-    outline: 1px solid #007CB8;
+    outline: 1px solid #4B9BCC;
 }
 
 .button{
     border-radius: 5px;
     padding: 10px;
-    border:solid 1px #cacaca;
-    background-color: #007CB8;
-    color: rgba(255, 255, 255, 0.938);
+    border:solid 1px #4B9BCC;
+    background-color: #f4f4f1bd;
+    color: rgba(86, 86, 86, 0.938);
     font-size: 14px;
     font-weight: 100;
     width: 120px;
     
+}
+.weather-forecast{
+display: flex;
+justify-content:space-around ;
+}
+
+
+.weather-forecast-day{
+    padding: 18px;
+}
+
+.weather-forecast-date{
+    text-align: center;
+    color:white;
+    font-weight: 300;
+    font-size: 17px;
+    line-height:20px ;
+    margin-bottom: 20px;
+}
+
+.weather-forecast-temp{
+    text-align: center;
+    color:#F5DE2D;
+    font-weight: 300;
+    font-size: 17px;
+    line-height:30px ;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+.weather-forecast-icon{
+    text-align: center;
+    line-height:20px ;
+    font-size: 60px;
+    margin-bottom:20px;
+
+}
+.temp-1{
+    padding: 0 10px;
 }
