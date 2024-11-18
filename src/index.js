@@ -74,9 +74,9 @@ forecastHtml =forecastHtml +
         </div>
             <div class="weather-forecast-temp">
                 <div class="temp-1">
-                    <strong>${Math.round(day.temperature.maximum)}</strong>
+                    <strong>${Math.round(day.temperature.maximum)°}</strong>
                 </div> 
-                <div class="temp-1"> ${Math.round(day.temperature.minimum)}</div>
+                <div class="temp-1"> ${Math.round(day.temperature.minimum)°}</div>
             </div>
 </div>
 `;}
