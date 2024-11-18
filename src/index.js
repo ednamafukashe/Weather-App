@@ -13,7 +13,7 @@ function refreshWeather(response){
     windElement.innerHTML = `${response.data.wind.speed}km/h`
     descriptionElement.innerHTML = `, ${response.data.condition.description}`
     humidityElement.innerHTML = `${response.data.temperature.humidity}%`
-    temperatureElement.innerHTML= Math.round(temperature)
+    temperatureElement.innerHTML= `$Math.round(temperature)°`
     timeElement.innerHTML = formatDate(date)
     getForecast(response.data.city)
 }
@@ -74,9 +74,9 @@ forecastHtml =forecastHtml +
         </div>
             <div class="weather-forecast-temp">
                 <div class="temp-1">
-                    <strong>${Math.round(day.temperature.maximum)°}</strong>
+                    <strong>${Math.round(day.temperature.maximum)}°</strong>
                 </div> 
-                <div class="temp-1"> ${Math.round(day.temperature.minimum)°}</div>
+                <div class="temp-1"> ${Math.round(day.temperature.minimum)}°</div>
             </div>
 </div>
 `;}
