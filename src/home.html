@@ -1,0 +1,37 @@
+  <script>
+    // Listen for messages from the iframe
+    window.addEventListener("message", (event) => {
+      // Validate the origin of the message for security purposes
+      if (event.origin === "https://www.gatewaystream.com/home") {
+        const notification = event.data; // Data sent from the iframe
+        console.log("Notification from iframe:", notification);
+
+        // Show notification (can replace this with any UI logic)
+        const notificationBox = document.getElementById("notification");
+        notificationBox.textContent = notification;
+        notificationBox.style.display = "block";
+
+        // Automatically hide notification after 5 seconds
+        setTimeout(() => {
+          notificationBox.style.display = "none";
+        }, 5000);
+      }
+    });
+  </script>
+  <style>
+    #notification {
+      display: none;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      font-family: Arial, sans-serif;
+    }
+  </style>
+<iframe src="https://www.gatewaystream.com/home" height="1050" width="750" frameborder="0"></iframe>
+<div id="notification"></div>
+
